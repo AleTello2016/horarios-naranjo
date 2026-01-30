@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Evogria';
+    src: url('evogria.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Evogria', sans-serif;
+    color: #000000;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.fondo-difuminado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('campus-naranjo.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.7);
+    z-index: -1;
+}
+
+.contenido {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.encabezado {
+    margin-bottom: 20px;
+}
+
+.encabezado h1, .encabezado h2, .encabezado h3 {
+    color: rgb(1, 33, 105);
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+.logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Menú de botones */
+.menu-facultades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Colores RGB solicitados */
+.btn-comunicacion { background-color: rgb(35, 76, 90); }
+.btn-economicas   { background-color: rgb(255, 158, 26); }
+.btn-juridicas    { background-color: rgb(228, 60, 47); }
+.btn-enfermeria   { background-color: rgb(250, 216, 30); }
+.btn-adulto       { background-color: rgb(250, 216, 30); }
+.btn-humanidades  { background-color: rgb(228, 41, 133); }
+.btn-teologia     { background-color: rgb(49, 104, 175); }
+
+/* Contenedor del Visor Adaptable */
+.contenedor-visor {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Se adapta al 75% del alto de la pantalla del dispositivo */
+    height: 75vh; 
+    width: 100%;
+    border: 3px solid rgb(1, 33, 105);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin-top: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .contenedor-visor {
+        height: 60vh;
+    }
+    .btn {
+        font-size: 0.75rem;
+    }
+}
